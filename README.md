@@ -67,8 +67,8 @@ Point the elrepo repositories at an internally hosted server.
 
 ```
 node.default['yum']['elrepo']['enabled'] = true
-node.default['yum']['base']['baseurl'] = 'https://internal.example.com/elrepo'
-node.default['yum']['base']['sslverify'] = false
+node.default['yum']['elrepo']['baseurl'] = 'https://internal.example.com/elrepo'
+node.default['yum']['elrepo']['sslverify'] = false
 
 include_recipe 'yum-elrepo'
 ```
