@@ -2,8 +2,8 @@ yum-elrepo Cookbook
 ============
 
 The yum-elrepo cookbook takes over management of the default
-repositoryids that ship with CentOS systems. It allows attribute
-manipulation of base updates extras centosplus contrib.
+repositoryids used by elrepo. It allows attribute manipulation of
+`elrepo`.
 
 Requirements
 ------------
