@@ -13,3 +13,5 @@ suites:
   - name: default
     run_list:
       - recipe[yum-elrepo::default]
+      - recipe[yum-elrepo::extras]
+      - recipe[yum-elrepo::testing]
