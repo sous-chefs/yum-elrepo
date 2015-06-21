@@ -5,10 +5,13 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos-5.10
-  - name: centos-6.5
+  - name: centos-5.11
+  - name: centos-6.6
+  - name: centos-7.0
 
 suites:
   - name: default
     run_list:
       - recipe[yum-elrepo::default]
+      - recipe[yum-elrepo::extras]
+      - recipe[yum-elrepo::testing]
