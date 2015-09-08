@@ -1,5 +1,7 @@
 yum-elrepo Cookbook
 ============
+[![Build Status](https://travis-ci.org/chef-cookbooks/yum-elrepo.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-elrepo)
+[![Cookbook Version](https://img.shields.io/cookbook/v/yum-elrepo.svg)](https://supermarket.chef.io/cookbooks/yum-elrepo)
 
 The yum-elrepo cookbook takes over management of the default
 repositoryids used by elrepo. It allows attribute manipulation of
@@ -75,10 +77,10 @@ include_recipe 'yum-elrepo'
 
 License & Authors
 -----------------
-- Author:: Sean OMeara (<someara@opscode.com>)
+- Author:: Sean OMeara (<someara@chef.io>)
 
 ```text
-Copyright:: 2011-2013 Opscode, Inc.
+Copyright:: 2011-2015 Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
