@@ -1,6 +1,6 @@
 yum-elrepo Cookbook CHANGELOG
 ======================
-This file is used to list changes made in each version of the yum-centos cookbook.
+This file is used to list changes made in each version of the yum-elrepo cookbook.
 
 v0.2.2 (2015-06-21)
 -------------------
