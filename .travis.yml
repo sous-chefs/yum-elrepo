@@ -1,42 +1,35 @@
-language: ruby
-bundler_args: --without kitchen_vagrant --without development
-rvm:
-- 2.1
-before_install:
-- echo -n $DO_KEY_CHUNK_{0..30} >> ~/.ssh/id_do.base64
-- cat ~/.ssh/id_do.base64 | tr -d ' ' | base64 --decode > ~/.ssh/id_do.pem
-script:
-- bundle exec rake travis
-after_script:
-- bundle exec kitchen destroy
+rvm: 2.2
+
+sudo: required
+
+# install the pre-release chef-dk.  Use chef-stable-precise to install the stable release
+addons:
+  apt:
+    sources:
+      - chef-current-precise
+    packages:
+      - chefdk
+
+services: docker
+
 env:
-  global:
-  - secure: Hqrn3prFu/ZfvC9FUp6nJ76b06jAJWYG0F+1WGXBraNPD2Y9xVLOst5jr8i9R7Iwwk2XJAVZ1Jd+YivfDWJ+0MmNArbJzDBPOq9I+Y/j6rtD23zKuaoNPllI4a+wPqxgV24oiN/0Eb3k3oTtDfvkw9NTO3PQKyhe3gPDOTE77K8=
-  - secure: GXwLbBkv/DO1NPdkKj2K5D/r4eM5BqoAy7L5/2x+nRq+dbVlONMPoLjhJDI7+DyBS6VDJM+yRDUb5OCiPUc8jy8iznOWrg/7vu0F85wrAZJ/Bag91bHwN/e48J3caGQKq8JDt4bgcGPbWymaDC0/ptB6XbDkaFEzHf6Do4MLyLo=
-  - secure: lj515Q+3Qi03rS8D723s9mWnQRNX3MWXqLFA69RgGSdn+etuybqqDwYwRFSiGVIiBNql9zgJD2nT5ZgET4yzxHvqSAzdriuwoFBBgflhJPBYWdfWhscnzxpYyZiZSkXJLZp/gmIZnv0beVHEilRlsoZv/+x9yYMIckEomt6tQx8=
-  - secure: osvrvZoxBkDvVS6VC9rCs7S/gIXUa1tOERX4nUB/VTXFxTBnX+iRpMO3pfjceglCjC/UdNG4slpE2HRqPQkiwckbuyiESfTqIQ8gVVOIWrKLa9NiueSBHjzrlB6KVIU7z8CuT9HqB8QTMgE4fodA+N6xtuLsTDTVuyS4fr+dPrg=
-  - secure: H8x7yNvtN9u8Xq2No43KDnX6J7F/6eeOIA25z90LNpTnIekWvYWHMfYHOFCkDFcOk8Oh0H+Z6qEynS9n+qaOj+Ws7ZrJyPoj+h9uZhuRV5W/gwmcZT720pVpNsqLmD1/F5oox1x2YMO7Y1HWd2fMfEx24btMpkPsnzDbe8vk8cE=
-  - secure: CcjFeLUmbjHrf6GTq5g1ESWmYRh2RhC1Zl5nDzzqmFa54K8HBLQz5NE5xngCO7+HAfwRuUdyIoM6fCzJjwNhWzsT+L0UHHCUZvZAZ1y3ct0kIcgKV67Q/TtquhzG/c3tgs4RCqAv7IGtetLK1BF01jGymTXAWfLY84veE9iLUXw=
-  - secure: kdRL8m/Y4y+kjkTNOsDF2ObyOAOJGRFBLIMPVDz2FTszS3fguu3ShOoK5Zo6YIQ7kB+pGJQEvFBtK78Qqns09MftJl94BCPnKxBiXdqllYLyy4JKlGYZiGmRyuNrZGCPeEK8/Ww0UYBgtRoOE2o8Mn/K2GCnmYeK/AYWB0ppxuQ=
-  - secure: NsLHMJOzZlAkG9Bfsq/z2vIIU62jIIY9vb+tV+8Jj2lk3hTOWgIGtYpRYz/BAccY6LfWviTMzXm3ONYtK39Kv7flyFk2KoE93KI8uFy0nv7E3PA7WbM29vGxVtNMMhy+8ZV28kTyZTrYvraFuwVc+pil4Ktg0xeFJB8fMpNSx3M=
-  - secure: RnZlKtAROAvybXU4zz09GCfCjU4BE6ztxpnNWvlTghrW35E089G/lR88x9Pfx9zVpna6ko3Gxu63qe4Z4sMstfonsUas8wBbtFWn9mtC/Tm38vtnzLMg+Zy/ba0MjYip6utoUzMyQl1cHogEozluB/+Z0UAWbyFfE6/+4FsROyI=
-  - secure: HSp27FdTdJozBKe6tFG0wpLF5O3eps/S2g8yolB9rYw8IVvhf55ANoFGCjHqu5uYmTFo3U8SbZ4fFa855vcwE9rwvSNHEHnbYtcfukIW3ro/9sQc1MGomsG80J+aqzV3NkCRD/B44gH9JxCjrHWa/5ha293MBXW8rXMBqSzcfhg=
-  - secure: K+elis08sjL2fVJ0ySavTThHd7y9ZgvEKCtFX9BwTPjgd1h6Si2VJfVxDd3A4VKsDEH92Kv+YY9+rtp+1UuLZlvq647bj7nyc27z2XEP6PjiF8nB5mL5qrDwU/7XFknd8e2GrtunvTE9vdOT/hYKy7tHDb8jMoyCh/BIIvQshYU=
-  - secure: AIRupBgy+5oQ5t4P1ovFeYhc8nt9C8VWkMTV59foxU362ALk93fI7Nmd2sIiVRCBOJbvx0d/5X483hr1WIxVeYvNKwROIXwchH0N4510dHlNCw8PRwS8WjJWN++Lq0nU5PY7sQq0AmmL2xw3ExaPVDgl+bbOmOsfCrj5vAGdsyw=
-  - secure: JgT159DSB99l6IouqETUHkUEg4lNOrWWbeaHpy6Qzp1rquEKSs3L2jxMIOA82J7YA4pm09IXeN88geSKFU8aYbOrI6MBTRACt+/55ng205pYVkZLKlJdPXvrHXUzye6kzcbEy+Nphep1zX4IbuUlQ3KXuPAO/ccmI5QeEFel2sg=
-  - secure: Mw/gdaHC0t4z10uYqkBqWLqPhAKcBreU6nvt9XLtVuJIkCtC07ydRwkvlQI9JpvYIuzOqovFmQbqzB1lenaM/RT4IuXtPfZ5p1o1vyYaUCumAc3QK+0/AaE/wv5CSUP3RtsHRSYG4mRP5LlRZC7hIKsR4osAaJYSsVDG+5T3rjw=
-  - secure: I+7b2MG1HeZPSY6ZzBcRy6PXunJqRdBhJ6WUCaW5DadtdxGjoKt8OpMS9ZN54txn/rxomTmIvKyR/S0SycDwbqf5FpalydrlAHybdC55Paahn/F9cMv/jUI30fSKfbaJfciryc91BdrynEIk1HeqC0tlI+QQTItE3cC40YGTpeo=
-  - secure: dUqeidKvbwCHzNk9gKLMstsRhKpJm/Nt+ecC/KPRQnyGHC+6rpnhVhatQrop6W+JXFdjYg/O2XkrMDJnwaulPfTkrlu1EvQ84f1zAmfKnmQnbfDpVDSzbzHhHD5V1um0fkqa6auGexxi8baK1BBjw5SWVZqHhOzHByD6BD6oOq4=
-  - secure: oZHeZAgmmxLPJoGkMQ9knreh9NzmwsbLnS0CTeSxawtLLi801H4x9YScZ3nBX2FlhiMwcHAd84BiLKdpsVxqfS6sPTDjBwlz0DBcjXV6Wv+nA4H9zw2vyXFAaSFA3vzCKZgeYvrQosBsNPZPkc9aD64+A9RbsjErfW48hGIuJ2Q=
-  - secure: gal1qYEsS8S3trRRyIZX/GXE4pW02b1cuGRLwvKaGGMDVtsMWjRNOdlm63g2rQqRoKilhzlzhq7i35I4LIOsuAxJb6oE5sFPWeZT9M8FjTRDvzx+WxFm+m1xg1v9NmPEFAXOaSIYxM360fX5qK/pWXA1kadvPx2qsrwn5rTDKn8=
-  - secure: k10cYNZc9t+SJGvQ9ta3omYAqkklVHD0Pa9aFJiYjL3tbkNggbC/dPo69/ZheL9JAABj9UDvtmnz2xxREaZUgxwDRO6xqJILXsXk982SAOBuG8kVQlqtT6WmqjA495zu0774Cv52GTC5lbJxyWR/et7kTr2AWhTn1roAGZ/VUOk=
-  - secure: K5mLYv8gV+xL409FMR3U8iskVDQyQ5QF20MdtCkFzcNSvfs1HW6EGd1woRm0T1iBfQYCS4ImG3AouNQ+CNLWd8mk3482KPbI5gUzFNp3fBJp1Xz1ESJeAh4M7iBQtHFHVaM5Awv0w82pZgQE0NOjudZ4Y/fpdzmtE8IEQrtnKb0=
-  - secure: ZcM0Qtx2VDqro5BjQ/0DPeeTc2W6rcaRHZ52QyGCkd7Goe+j1ZwPh0ikE+PbiVakU3czr0ndWIa0J2ACx6S5EMqOJ//9vBKMxBHALql5JthgqTQWLMEwWg1Kejx2tWzpDWPx3bGZU9yOup8Xd9be0omC2QVi4qyQ5mBDzZEjnpQ=
-  - secure: DZUFr4ZE2HFCLWbaSrSb9xQL0QKJKdq/bVdiOyiTVhB76/HzwwOD3vSqeEUs0VE3yknV13roeUhG0xO3+rjitPWBvkPpR0C6AZIRWlQKxajXJAwwp8xm8VDV0b8qthLCjasTHy3hBrnC28lmPKE4fzMBdmvP8jegul0xGDC/s2Q=
-  - secure: plJeXS9z+VJCNm/7CoPdnQrvx4UVJ36GevTPj0XeYpR3kHSWEKDKXEC4m/uzdVcTmE+Vys0/WdQFJCVbgnqPQd9E4rEBNUIe6DGyzjMH5eq4CjotyuuHmqrawk0sSZ1EbISlgn4e0dlgVqQwCoTxPzOJzjSc3o5LP9QcWXRGjRU=
-  - secure: e0jTCvj/d2Ww9qJnoa3QGSjycxgJhgyhLM9mbcyKQPG47LJnl94tm0MqxfYnJZ1QDcNcukFT0U/vTxVH7blBw1xoAQU3XJKPoehHNy4OgDcpTVEjEQa+soBFUZaUVx4yUIyhqfMxxNfk0YbV8V2FIvljcb1wjPnKeKlfHb/l/Dg=
-  - secure: num4tohPFnF5eJN/tNKAOnXJPdZ1nzZ9Fh9HOGGsBmSgeEkrj6+Nu0IM29G5Zu5Z7OIZQ6nqICkFHQMhm9Z38qgFG9EZaPbQrh27w36jGvRRUjwezN67OFZ5lab8eny/2Qgbrw5IYe8fRMqZSa9DHMc4p/AJiNyw0rkns2nhdLU=
-  - secure: foDRnNQgfLtMPM8MBIAgV9HH3Hd1JaNK3HkS3DzpVDdCnQ+lARDiB9nkO/0LZ0HTAuvEUOntfKhufwitXMuQiKKRNKAML6AWZ3FLswZH4whKnOvTUWDGBx3/R6e7lEHJHaYHQJEgXfK/bcGPoRGHgzTdQRnvrOTaYlo3yVgu6c4=
-  - secure: IluFO3EI3vidQrxbgNIZosoJ6Lnzm+Nod1gLbniCPPUt3d4ZkShc5zRdyrSDsCl8GHBKgM3D48mubvKr2RRESaHgoMOIbiSlHFJ9iqXrk9lTmGAO9/Cu2xl/8IYjpie7LR3vjzI/8+fNn3b7/8hVyjDebCNv1P/j5hBFaYsF+ao=
-  - secure: CCeDeuI/WDYlzsSP7BkstXcgnB+MEXudhOIymbi8toEnUrOfazkGW/fS7q3z4xlIV2GzzyGP4hB3KUS1fdwazmDMEHS2cHqMr0ysIZwjtFA6lzUIksh1KtoWiQvFwrVYjKCF6dcewQMKXqLnD3I+E8utGkeaLp+XrfF69lloIek=
-  - secure: Gn6OMxZQQhutRdndridn1Vpb8x2C3wG2TWE0GHe8sp8/UpaJU+qSG/la4fUrV0hCLEdaX/Hx5XiwvnBbYvwoUOQdD5h0QZM4SZE8Knhrw2pGsqxT+9/i83VDc+rBl2XtKl4KQITWZBV4w9+zluO21f6wlCF4RrB5bisv+TsJO4M=
+  matrix:
+  - INSTANCE=default-centos-71
+
+# Don't `bundle install`
+install: echo "skip bundle install"
+
+# Ensure we make ChefDK's Ruby the default
+before_script:
+  # https://github.com/zuazo/kitchen-in-travis-native/issues/1#issuecomment-142230889
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+  - /opt/chefdk/embedded/bin/chef gem install kitchen-docker
+script:
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/rubocop --version
+  - /opt/chefdk/embedded/bin/rubocop
+  - /opt/chefdk/embedded/bin/foodcritic --version
+  - /opt/chefdk/embedded/bin/foodcritic . --exclude spec
+  - /opt/chefdk/embedded/bin/rspec
+  - KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
