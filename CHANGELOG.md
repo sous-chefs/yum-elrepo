@@ -2,6 +2,10 @@ yum-elrepo Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+v0.2.5 (2015-12-01)
+-------------------
+- Updating if/unless logic in recipes
+
 v0.2.4 (2015-10-28)
 -------------------
 - Fixing Chef 13 nil property deprecation warnings
