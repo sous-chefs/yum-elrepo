@@ -51,7 +51,7 @@ Usage Example
 -------------
 To disable the elrepo repository through a Role or Environment definition
 
-```
+```ruby
 default_attributes(
   :yum => {
     :elrepo => {
@@ -66,7 +66,7 @@ default_attributes(
 To enable the elrepo repository with a wrapper cookbook, place
 the following in a recipe:
 
-```
+```ruby
 node.default['yum']['elrepo']['enabled'] = true
 include_recipe 'yum-elrepo'
 ```
@@ -75,7 +75,7 @@ More Examples
 -------------
 Point the elrepo repositories at an internally hosted server.
 
-```
+```ruby
 node.default['yum']['elrepo']['enabled'] = true
 node.default['yum']['elrepo']['baseurl'] = 'https://internal.example.com/elrepo'
 node.default['yum']['elrepo']['sslverify'] = false
