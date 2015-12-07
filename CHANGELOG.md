@@ -1,17 +1,13 @@
-yum-elrepo Cookbook CHANGELOG
-======================
+# yum-elrepo Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
-v0.2.5 (2015-12-01)
--------------------
+## v0.2.5 (2015-12-01)
 - Updating if/unless logic in recipes
 
-v0.2.4 (2015-10-28)
--------------------
+## v0.2.4 (2015-10-28)
 - Fixing Chef 13 nil property deprecation warnings
 
-v0.2.3 (2015-09-22)
--------------------
+## v0.2.3 (2015-09-22)
 - Update yum depencency from ~3.0 to ~3.2
 - Added source_url and issues_url metadata
 - Added the standard chef rubocop config
@@ -23,18 +19,14 @@ v0.2.3 (2015-09-22)
 - Update contributing, maintainers, and testing docs
 - Add standard Gemfile with testing and development dependencies
 
-v0.2.2 (2015-06-21)
--------------------
+## v0.2.2 (2015-06-21)
 - Add elrepo-testing and elpreo-extras repositories
 
-v0.2.0 (2014-02-14)
--------------------
+## v0.2.0 (2014-02-14)
 Updating test harness
 
-v0.1.4
-------
+## v0.1.4
 Adding CHANGELOG.md
 
-v0.1.0
-------
+## v0.1.0
 initial release
