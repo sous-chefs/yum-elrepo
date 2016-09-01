@@ -14,3 +14,5 @@ issues_url 'https://github.com/chef-cookbooks/yum-elrepo/issues' if respond_to?(
 %w(amazon centos fedora oracle redhat scientific).each do |os|
   supports os
 end
+
+chef_version '>= 11' if respond_to?(:chef_version)
