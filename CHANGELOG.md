@@ -1,6 +1,11 @@
 # yum-elrepo Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## 1.0.0 (2016-09-06)
+- Testing updates
+- Add chef_version metadata
+- Remove support for Chef 11
+
 ## v0.2.5 (2015-12-01)
 - Updating if/unless logic in recipes
 
