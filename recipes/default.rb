@@ -1,6 +1,7 @@
 #
 # Author:: Sean OMeara (<someara@chef.io>)
-# Recipe:: yum-elrepo::default
+# Cookbook:: yum-elrepo
+# Recipe:: default
 #
 # Copyright:: 2013-2016, Chef Software, Inc.
 #

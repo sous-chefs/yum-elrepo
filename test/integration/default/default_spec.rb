@@ -1,0 +1,3 @@
+describe command('sudo yum -y install getinfo') do
+  its('exit_status') { should eq 0 }
+end
