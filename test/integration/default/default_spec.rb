@@ -1,3 +1,6 @@
-describe command('sudo yum -y install getinfo') do
-  its('exit_status') { should eq 0 }
+
+describe file('/etc/yum.repos.d/elrepo.repo') do
+  it { should exist }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
 end
