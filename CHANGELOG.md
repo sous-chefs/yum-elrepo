@@ -1,6 +1,12 @@
 # yum-elrepo Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## 1.1.1 (2016-12-22)
+
+- Switch to inspec for testing
+- Depend on the latest compat_resource cookbook
+- Cookstyle fixes
+
 ## 1.1.0 (2016-11-14)
 - Replace yum dependency with compat_resource
 - Added Kernel repo
