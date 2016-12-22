@@ -6,7 +6,7 @@ description 'Installs and configures the elrepo yum repository'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.1.0'
 
-depends 'compat_resource', '>= 12.14.6'
+depends 'compat_resource', '>= 12.16.3'
 
 %w(amazon centos fedora oracle redhat scientific).each do |os|
   supports os
