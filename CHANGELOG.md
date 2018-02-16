@@ -1,6 +1,12 @@
 # yum-elrepo Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## 2.0.0 (2018-02-16)
+
+- Require Chef 12.14+ and remove compat_resource dep
+- Improve testing
+- Use a SPDX compliant license string
+
 ## 1.1.1 (2016-12-22)
 
 - Switch to inspec for testing
