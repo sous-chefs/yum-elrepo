@@ -10,11 +10,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: amazonlinux
-    driver_config:
-      box: mvbcoding/awslinux
   - name: amazonlinux-2
-  - name: centos-6
   - name: centos-7
   - name: centos-8
 
@@ -24,3 +20,4 @@ suites:
       - recipe[yum-elrepo::default]
       - recipe[yum-elrepo::extras]
       - recipe[yum-elrepo::testing]
+      - recipe[yum-elrepo::kernel]
