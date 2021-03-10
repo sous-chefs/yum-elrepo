@@ -45,7 +45,6 @@ jobs:
           - centos-8
         suite:
           - 'default'
-          - 'enable-all'
       fail-fast: false
 
     steps:
