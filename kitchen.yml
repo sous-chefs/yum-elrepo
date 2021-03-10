@@ -20,3 +20,4 @@ suites:
       - recipe[yum-elrepo::default]
       - recipe[yum-elrepo::extras]
       - recipe[yum-elrepo::testing]
+      - recipe[yum-elrepo::kernel]
