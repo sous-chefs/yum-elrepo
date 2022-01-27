@@ -4,6 +4,9 @@ This file is used to list changes made in each version of the yum-elrepo cookboo
 
 ## Unreleased
 
+- Add Alma Linux and Rocky Linux to testing
+- Remove CentOS 8 (prefer Stream)
+
 ## 2.1.2 - *2021-08-29*
 
 - Standardise files with files in sous-chefs/repo-management
