@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
-## Unreleased
+## 2.1.3 - *2022-01-28*
 
 - Add Alma Linux and Rocky Linux to testing
 - Remove CentOS 8 (prefer Stream)
