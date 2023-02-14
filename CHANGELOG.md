@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## Unreleased
+
 ## 2.1.4 - *2023-02-14*
 
 ## 2.1.3 - *2022-01-28*
