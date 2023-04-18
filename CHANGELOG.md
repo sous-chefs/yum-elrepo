@@ -4,9 +4,20 @@ This file is used to list changes made in each version of the yum-elrepo cookboo
 
 ## Unreleased
 
+- Add support for EL9 and AmazonLinux 2023
+- Switch to using https by default
+- Remove legacy files
+- Update various GitHub Actions
+- Pull in latest standard files
+
 ## 2.1.5 - *2023-04-18*
 
+- Add renovate.json
+
 ## 2.1.4 - *2023-02-14*
+
+- Remove Delivery
+- Remove Gemfile
 
 ## 2.1.3 - *2022-01-28*
 
