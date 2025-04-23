@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## Unreleased
+
 ## 2.3.0 - *2025-04-23*
 
 - Add new v2 GPG key
