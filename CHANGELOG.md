@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-elrepo cookboo
 
 ## Unreleased
 
+- Add new v2 GPG key
+
 ## 2.2.10 - *2024-05-03*
 
 ## 2.2.9 - *2024-05-03*
