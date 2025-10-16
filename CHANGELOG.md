@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## [2.3.2](https://github.com/sous-chefs/yum-elrepo/compare/2.3.1...v2.3.2) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#44](https://github.com/sous-chefs/yum-elrepo/issues/44)) ([41f5f7d](https://github.com/sous-chefs/yum-elrepo/commit/41f5f7d603d58b575fadd7c76b1787998c13c4d4))
+
 ## 2.3.0 - *2025-04-23*
 
 * Add new v2 GPG key
