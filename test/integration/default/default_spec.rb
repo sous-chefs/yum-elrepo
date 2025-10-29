@@ -1,4 +1,4 @@
-e_rel = os.name == 'amazon' ? '9' : os.release.to_i
+e_rel = os.release.to_i
 
 describe yum.repo('elrepo') do
   it { should exist }
