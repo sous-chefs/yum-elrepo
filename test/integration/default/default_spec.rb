@@ -1,4 +1,4 @@
-e_rel = os.name == 'amazon' ? '9' : os.release.to_i
+e_rel = os.release.to_i
 
 describe yum.repo('elrepo') do
   it { should exist }
@@ -32,6 +32,10 @@ end
 ).each do |repo|
   describe ini("/etc/yum.repos.d/#{repo}.repo") do
     its("#{repo}.gpgcheck") { should cmp 1 }
-    its("#{repo}.gpgkey") { should cmp 'https://elrepo.org/RPM-GPG-KEY-elrepo.org https://www.elrepo.org/RPM-GPG-KEY-v2-elrepo.org' }
+    if e_rel >= 10
+      its("#{repo}.gpgkey") { should cmp 'https://www.elrepo.org/RPM-GPG-KEY-v2-elrepo.org' }
+    else
+      its("#{repo}.gpgkey") { should cmp 'https://elrepo.org/RPM-GPG-KEY-elrepo.org https://www.elrepo.org/RPM-GPG-KEY-v2-elrepo.org' }
+    end
   end
 end

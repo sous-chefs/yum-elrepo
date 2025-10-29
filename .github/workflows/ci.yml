@@ -25,10 +25,12 @@ jobs:
         os:
           - almalinux-8
           - almalinux-9
-          - amazonlinux-2023
+          - almalinux-10
           - centos-stream-9
+          - centos-stream-10
           - rockylinux-8
           - rockylinux-9
+          - rockylinux-10
         suite:
           - "default"
       fail-fast: false
