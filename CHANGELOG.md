@@ -2,6 +2,18 @@
 
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## [2.4.0](https://github.com/sous-chefs/yum-elrepo/compare/v2.3.2...v2.4.0) (2025-10-29)
+
+
+### Features
+
+* Add support for EL10 ([#46](https://github.com/sous-chefs/yum-elrepo/issues/46)) ([a2beac1](https://github.com/sous-chefs/yum-elrepo/commit/a2beac151ae3500869a10f60c58f5f266cbb5307))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#44](https://github.com/sous-chefs/yum-elrepo/issues/44)) ([41f5f7d](https://github.com/sous-chefs/yum-elrepo/commit/41f5f7d603d58b575fadd7c76b1787998c13c4d4))
+
 ## [2.3.2](https://github.com/sous-chefs/yum-elrepo/compare/2.3.1...v2.3.2) (2025-10-16)
 
 
