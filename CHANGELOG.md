@@ -2,6 +2,17 @@
 
 This file is used to list changes made in each version of the yum-elrepo cookbook.
 
+## [3.0.0](https://github.com/sous-chefs/yum-elrepo/compare/v2.4.0...v3.0.0) (2026-05-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate yum-elrepo to custom resources ([#52](https://github.com/sous-chefs/yum-elrepo/issues/52))
+
+### Features
+
+* migrate yum-elrepo to custom resources ([#52](https://github.com/sous-chefs/yum-elrepo/issues/52)) ([51f37d4](https://github.com/sous-chefs/yum-elrepo/commit/51f37d4de7570a10a93982bb84637b481b7da024))
+
 ## [2.4.0](https://github.com/sous-chefs/yum-elrepo/compare/v2.3.2...v2.4.0) (2025-10-29)
 
 
