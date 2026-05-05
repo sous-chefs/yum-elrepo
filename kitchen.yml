@@ -1,30 +1,41 @@
+---
 driver:
   name: vagrant
 
 provisioner:
   name: chef_infra
+  product_name: chef
+  product_version: <%= ENV['CHEF_VERSION'] || 'latest' %>
+  channel: stable
+  chef_license: accept
   multiple_converge: 2
   enforce_idempotency: true
   deprecations_as_errors: true
-  chef_license: accept-no-persist
 
 verifier:
   name: inspec
+  sudo: true
 
 platforms:
   - name: almalinux-8
   - name: almalinux-9
   - name: almalinux-10
-  - name: centos-stream-9
-  - name: centos-stream-10
+  - name: oraclelinux-8
+  - name: oraclelinux-9
   - name: rockylinux-8
   - name: rockylinux-9
   - name: rockylinux-10
 
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
+
 suites:
   - name: default
-    run_list:
-      - recipe[yum-elrepo::default]
-      - recipe[yum-elrepo::extras]
-      - recipe[yum-elrepo::testing]
-      - recipe[yum-elrepo::kernel]
+    run_list: *default_run_list
+    verifier: *default_verifier
