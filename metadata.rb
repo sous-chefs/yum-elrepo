@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 name              'yum-elrepo'
 maintainer        'Sous Chefs'
 maintainer_email  'help@sous-chefs.org'
 license           'Apache-2.0'
-description       'Installs and configures the elrepo yum repository'
+description       'Provides custom resources for managing ELRepo yum repositories'
 version           '2.4.0'
 source_url        'https://github.com/sous-chefs/yum-elrepo'
 issues_url        'https://github.com/sous-chefs/yum-elrepo/issues'
-chef_version      '>= 12.15'
+chef_version      '>= 15.3'
 
-supports 'centos'
-supports 'fedora'
-supports 'oracle'
-supports 'redhat'
-supports 'scientific'
+supports 'almalinux', '>= 8.0'
+supports 'oracle', '>= 8.0'
+supports 'redhat', '>= 8.0'
+supports 'rocky', '>= 8.0'
