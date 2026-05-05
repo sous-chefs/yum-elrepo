@@ -11,16 +11,20 @@ Manages the `elrepo-extras` yum repository.
 
 ## Properties
 
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `repositoryid` | String | `'elrepo-extras'` | Repository ID and repo file name |
-| `description` | String | EL major derived | Repository description |
-| `mirrorlist` | String | EL major derived | ELRepo mirrorlist URL |
-| `baseurl` | String, Array | `nil` | Optional base URL override |
-| `gpgkey` | String, Array | EL major derived | GPG key URL or URLs |
-| `gpgcheck` | true, false | `true` | Enables package GPG checking |
-| `enabled` | true, false | `true` | Enables the repository |
-| `cost`, `exclude`, `enablegroups`, `failovermethod`, `http_caching`, `include_config`, `includepkgs`, `keepalive`, `max_retries`, `metadata_expire`, `mirror_expire`, `priority`, `proxy`, `proxy_username`, `proxy_password`, `sslcacert`, `sslclientcert`, `sslclientkey`, `sslverify`, `timeout` | passthrough | `nil` | Optional `yum_repository` properties |
+* `repositoryid` - Repository ID and repo file name. Defaults to
+  `'elrepo-extras'`.
+* `description` - Repository description. Defaults from the EL major version.
+* `mirrorlist` - ELRepo mirrorlist URL. Defaults from the EL major version.
+* `baseurl` - Optional base URL override. Accepts a string or array.
+* `gpgkey` - GPG key URL or URLs. Defaults from the EL major version.
+* `gpgcheck` - Enables package GPG checking. Defaults to `true`.
+* `enabled` - Enables the repository. Defaults to `true`.
+* Yum repository passthrough options - Optional `yum_repository` properties:
+  `cost`, `exclude`, `enablegroups`, `failovermethod`, `http_caching`,
+  `include_config`, `includepkgs`, `keepalive`, `max_retries`,
+  `metadata_expire`, `mirror_expire`, `priority`, `proxy`, `proxy_username`,
+  `proxy_password`, `sslcacert`, `sslclientcert`, `sslclientkey`, `sslverify`,
+  and `timeout`.
 
 ## Examples
 
